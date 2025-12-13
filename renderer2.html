@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Illegal Uzumaki Renderer</title>
+</head>
+<body style="margin:0;background:green">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-500 -500 1000 1000" width="1000" height="1000">
+  <rect width="1000" height="1000" fill="green"/>
+  <g transform="translate(0,0)">
+    <script type="text/javascript"><![CDATA[
+      const urlParams = new URLSearchParams(window.location.search);
+      const tokenId = parseInt(urlParams.get('t') || '0', 10);
+      const t = 0.01 + (tokenId / 512) * 44;
+
+      const N = 9000;
+      const step = 0.34;
+      let out = '';
+
+      for (let i = 1; i < N; i += step) {
+        let n = i;
+        let base = Math.pow(n, 1.5) / (n + 1000);
+        let envelope = Math.abs(Math.sin(0.1 * n * Math.sin(83.3333 * t)));
+        let r = base * envelope;
+        let angle = n + 0.1 * n * t;
+        let x = r * Math.cos(angle) * 4.4;
+        let y = r * Math.sin(angle) * 4.4;
+        let hue = Math.floor((t * 21 + n * 0.019) % 240 + 180);
+        out += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.5" fill="hsl(${hue},94%,72%)"/>`;
+      }
+      document.write(out);
+    ]]></script>
+  </g>
+</svg>
+</body>
+</html>
