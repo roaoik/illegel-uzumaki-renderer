@@ -26,7 +26,7 @@
         let x = r * Math.cos(angle) * 4.4;
         let y = r * Math.sin(angle) * 4.4;
         let hue = Math.floor((t * 21 + n * 0.019) % 240 + 180);
-        out += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.5" fill="hsl(${hue},94%,72%)"/>`;
+        out += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="0.5" fill="hsl(${hue},94%,72%)"/>`;
       }
       document.write(out);
     ]]></script>
