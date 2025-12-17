@@ -5,12 +5,12 @@
   <title>Illegal Uzumaki Renderer</title>
 </head>
 <body style="margin:0;background:green">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-500 -500 1000 1000" width="1000" height="1000">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-400 -400 800 800" width="800" height="800">
   <rect width="1000" height="1000" fill="green"/>
   <g transform="translate(0,0)">
     <script type="text/javascript"><![CDATA[
       const urlParams = new URLSearchParams(window.location.search);
-      const tokenId = parseInt(urlParams.get('t') || '0', 5);
+      const tokenId = parseInt(urlParams.get('t') || '0', 10);
       const t = 0.01 + (tokenId / 512) * 2100;
 
       const N = 9000;
