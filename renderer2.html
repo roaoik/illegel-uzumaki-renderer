@@ -20,7 +20,7 @@
       for (let i = 1; i < N; i += step) {
         let n = i;
         let base = Math.pow(n, 1.5) / (n + 1000);
-        let envelope = Math.abs(Math.sin(0.1 * n * Math.sin(83.3333 * t)));
+        let envelope = Math.abs(Math.sin(0.1 * n * Math.sin(83.3333 * t))/2);
         let r = base * envelope;
         let angle = n + 0.1 * n * t;
         let x = r * Math.cos(angle) * 4.4;
